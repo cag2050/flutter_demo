@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
 void main() => runApp(MyApp());
 
@@ -43,6 +44,18 @@ class NewRoute extends StatelessWidget {
   }
 }
 
+class RandomWordsWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // 生成随机字符串
+    final wordPair = new WordPair.random();
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: new Text(wordPair.toString()),
+    );
+  }
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -82,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //                );
               },
             ),
+            RandomWordsWidget(),
           ],
         ),
       ),
