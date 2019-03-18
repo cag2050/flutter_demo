@@ -11,6 +11,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      //注册路由表
+      routes:{
+        "new_page": (context) => NewRoute(),
+      } ,
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -69,11 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open new route"),
               textColor: Colors.blue,
               onPressed: () {
+                Navigator.pushNamed(context, "new_page");
                 //导航到新路由
-                Navigator.push( context,
-                    new MaterialPageRoute(builder: (context) {
-                      return new NewRoute();
-                    }));
+//                Navigator.push(context,
+//                    new MaterialPageRoute(builder: (context) {
+//                      return new NewRoute();
+//                    })
+//                );
               },
             ),
           ],
