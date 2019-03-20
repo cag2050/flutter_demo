@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //注册路由表
-      routes:{
+      routes: {
         "new_page": (context) => NewRoute(),
-      } ,
+      },
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
