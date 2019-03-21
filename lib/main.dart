@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_demo/SwitchAndCheckBoxTestRoute.dart';
+import 'FormTestRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
       //注册路由表
       routes: {
         "new_page": (context) => NewRoute(),
+        "form_demo": (context) => FormTestRoute(),
       },
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -52,6 +55,49 @@ class RandomWordsWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: new Text(wordPair.toString()),
+    );
+  }
+}
+
+class ImageDemoWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Image(
+        image: AssetImage('assets/girl.jpg'),
+        width: 200.0,
+        fit: BoxFit.contain);
+  }
+}
+
+class IconDemoWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          Icons.accessible,
+          color: Colors.green,
+        ),
+        Icon(
+          Icons.error,
+          color: Colors.green,
+        ),
+        Icon(
+          Icons.fingerprint,
+          color: Colors.green,
+        ),
+      ],
+    );
+  }
+}
+
+class RaisedButtonDemoWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      child: Text("normal"),
+      onPressed: () => {},
     );
   }
 }
@@ -95,7 +141,18 @@ class _MyHomePageState extends State<MyHomePage> {
 //                );
               },
             ),
+            FlatButton(
+              child: Text("open form_demo route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "form_demo");
+              },
+            ),
             RandomWordsWidget(),
+            ImageDemoWidget(),
+            RaisedButtonDemoWidget(),
+            IconDemoWidget(),
+            SwitchAndCheckBoxTestRoute(),
           ],
         ),
       ),

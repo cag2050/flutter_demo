@@ -1,5 +1,16 @@
 # flutter_demo
 
+实现功能：
+1. 计数器
+2. 单个路由（多个路由，如何方便管理？）
+3. 包使用
+4. 本地图片加载
+5. button 按钮
+6. icon 图标
+7. 单选开关和复选框
+8.
+
+
 A new Flutter application.
 
 ## Getting Started
