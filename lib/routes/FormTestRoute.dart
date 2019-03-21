@@ -14,6 +14,9 @@ class _FormTestRouteState extends State<FormTestRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
 //      title: "Form Test",
+      appBar: AppBar(
+        title: Text("form demo"),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
         child: Form(
@@ -28,7 +31,7 @@ class _FormTestRouteState extends State<FormTestRoute> {
                       labelText: "用户名",
                       hintText: "用户名或邮箱",
                       icon: Icon(Icons.person)),
-                  // 校验用户名
+                  // 校验用户名11
                   validator: (v) {
                     return v.trim().length > 0 ? null : "用户名不能为空";
                   }),

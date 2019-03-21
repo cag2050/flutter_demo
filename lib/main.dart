@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter_demo/SwitchAndCheckBoxTestRoute.dart';
-import 'FormTestRoute.dart';
+import 'routes/routes.dart' as routes;
 
 void main() => runApp(MyApp());
 
@@ -15,10 +15,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //注册路由表
-      routes: {
-        "new_page": (context) => NewRoute(),
-        "form_demo": (context) => FormTestRoute(),
-      },
+      routes: routes.routesJson,
+//      routes: {
+//        "new_page": (context) => NewRoute(),
+//        "form_demo": (context) => FormTestRoute(),
+//      },
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -31,20 +32,6 @@ class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
-}
-
-class NewRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("New route"),
-      ),
-      body: Center(
-        child: Text("This is new route"),
-      ),
-    );
-  }
 }
 
 class RandomWordsWidget extends StatelessWidget {
