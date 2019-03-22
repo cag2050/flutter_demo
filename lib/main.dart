@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter_demo/SwitchAndCheckBoxTestRoute.dart';
-import 'routes/routes.dart' as routes;
+import 'routes/index.dart' as routes;
 
 void main() => runApp(MyApp());
 
@@ -133,6 +133,20 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "form_demo");
+              },
+            ),
+            FlatButton(
+              child: Text("open row_column_demo1 route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "row_column_demo1");
+              },
+            ),
+            FlatButton(
+              child: Text("open row_column_demo2 route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "row_column_demo2");
               },
             ),
             RandomWordsWidget(),
